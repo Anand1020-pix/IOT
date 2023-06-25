@@ -57,10 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: const Text(
-              "Sensor Data App",
-              style: TextStyle(color: Colors.black),
-            ),
             backgroundColor: Colors.white,
           ),
           body: Column(
@@ -97,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         title: Text(
                           ' ${sensorData['temperature'] ?? '-'}',
                           style: const TextStyle(
-                              fontSize: 40,
+                              fontSize: 30,
                               color: Color.fromARGB(255, 116, 167, 255)),
                           textAlign: TextAlign.center,
                         ),
@@ -112,17 +108,82 @@ class _HomeScreenState extends State<HomeScreen> {
                     elevation: 10,
                     child: SizedBox(
                       width: 120,
+                      height: 120,
+                      child: ListTile(
+                        title: Text(
+                          ' ${sensorData['flow0'] ?? '-'}',
+                          style: const TextStyle(
+                              fontSize: 30,
+                              color: Color.fromARGB(255, 116, 167, 255)),
+                          textAlign: TextAlign.center,
+                        ),
+                        subtitle: const Text(
+                          "Flow Rate (Ml/s)",
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                ],
+              ),
+              Row(
+                children: [
+                  Card(
+                    elevation: 10,
+                    child: SizedBox(
+                      width: 120,
                       height: 100,
                       child: ListTile(
                         title: Text(
-                          ' ${sensorData['flow'] ?? '-'}',
+                          ' ${sensorData['flow1'] ?? '-'}',
+                          style: const TextStyle(
+                              fontSize: 30,
+                              color: Color.fromARGB(255, 116, 167, 255)),
+                          textAlign: TextAlign.center,
+                        ),
+                        subtitle: const Text(
+                          "Flow Rate 1 (Ml/s)",
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    elevation: 10,
+                    child: SizedBox(
+                      width: 120,
+                      height: 100,
+                      child: ListTile(
+                        title: Text(
+                          ' ${sensorData['flow2'] ?? '-'}',
+                          style: const TextStyle(
+                              fontSize: 30,
+                              color: Color.fromARGB(255, 116, 167, 255)),
+                          textAlign: TextAlign.center,
+                        ),
+                        subtitle: const Text(
+                          "Flow Rate 2 (Ml/s)",
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    elevation: 10,
+                    child: SizedBox(
+                      width: 120,
+                      height: 100,
+                      child: ListTile(
+                        title: Text(
+                          ' ${sensorData['Tur'] ?? '-'}',
                           style: const TextStyle(
                               fontSize: 40,
                               color: Color.fromARGB(255, 116, 167, 255)),
                           textAlign: TextAlign.center,
                         ),
                         subtitle: const Text(
-                          "Flow Rate (Ml/s)",
+                          "Turbidity",
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -155,27 +216,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   const Spacer(),
-                  Card(
-                    elevation: 10,
-                    child: SizedBox(
-                      width: 120,
-                      height: 100,
-                      child: ListTile(
-                        title: Text(
-                          ' ${sensorData['Tur'] ?? '-'}',
-                          style: const TextStyle(
-                              fontSize: 40,
-                              color: Color.fromARGB(255, 116, 167, 255)),
-                          textAlign: TextAlign.center,
-                        ),
-                        subtitle: const Text(
-                          "Turbidity",
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const Spacer(),
                 ],
               ),
               Row(
@@ -184,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     elevation: 10,
                     child: SizedBox(
                       width: 400,
-                      height: 190,
+                      height: 120,
                       child: ListView(
                         children: const <Widget>[
                           Center(
@@ -195,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Center(
                             child: Text(
-                              "The Water that your are getting,is pristine and very healthy to consume. Help Our Planet by reducing you consumption too.",
+                              "The Water that your are getting,is pristine and very healthy to consume. Help Our Planet by reducing your consumption too.",
                               style: TextStyle(fontSize: 20),
                               textAlign: TextAlign.center,
                             ),
@@ -220,18 +260,28 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 30,
                             color: Colors.blue,
                             child: const Center(
-                                child: Text(
-                              'Alerts',
-                              style:
-                                  TextStyle(fontSize: 20, color: Colors.white),
-                            )),
+                              child: Text(
+                                'Alerts',
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 30,
+                            child: Text(
+                              "${sensorData['al'] ?? '-'}",
+                              style: const TextStyle(
+                                  fontSize: 20, color: Colors.red),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                         ],
                       ),
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           )),
     );
