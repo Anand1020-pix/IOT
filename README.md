@@ -1,6 +1,6 @@
 # IoT:Sensor Data Monitoring System 
 
-Welcome to the **IoT Project: Sensor Data Monitoring** repository! This project aims to collect and monitor sensor data using an Arduino Uno, TDS sensor, water temperature sensor, and three water flow sensors. The gathered data is then displayed in real-time on a Flutter application. The repository contains all the necessary code and resources for this project.
+Welcome to the **Sensor Data Monitoring System** repository! This project aims to collect and monitor sensor data using an Arduino Uno, TDS sensor, water temperature sensor, and three water flow sensors. The gathered data is then displayed in real-time on a Flutter application. The repository contains all the necessary code and resources for this project.
 
 ## Repository Contents
 
