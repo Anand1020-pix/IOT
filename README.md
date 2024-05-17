@@ -77,6 +77,7 @@ Special thanks to the developers of the libraries and frameworks used in this pr
 
 ## Screenshots
 
-<img src="1.png" width="500" />
+<img src="1.png" width="300" align="left" />
+<img src="2.jpg" width="300" align="right" />
 
-11
+
